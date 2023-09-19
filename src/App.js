@@ -19,15 +19,15 @@ function App() {
         
       </div>
         
-      <Button class="button-other" id="button-duplicate">Duplicate</Button>
+      <button class="button-other" id="button-duplicate">Duplicate</button>
         
-      <Button class="button-other" id="button-delete">Delete</Button>
+      <button class="button-other" id="button-delete">Delete</button>
         
-      <Button class="button-other" id="button-color" onClick="toggleBackground()">Toggle Background Color</Button>
+      <button class="button-other" id="button-color" onClick="toggleBackground()">Toggle Background Color</button>
 
-      <Button class="button-other" id="button-heading" onClick="changeHeading()">Change Heading</Button>
+      <button class="button-other" id="button-heading" onClick="changeHeading()">Change Heading</button>
         
-      <Button class="button-other" id="button-description" onClick="toggleDescription()">Toggle Description</Button>
+      <button class="button-other" id="button-description" onClick="toggleDescription()">Toggle Description</button>
         
       </div>  
     );
