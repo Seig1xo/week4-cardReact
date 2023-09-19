@@ -4,7 +4,7 @@ function App() {
 
 
     return (
-      <div class="wrapper">
+      <div class="App">
 
       <div class="card" id="card">
 
