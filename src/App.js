@@ -1,8 +1,6 @@
 import './App.css';
 
 function App() {
-
-
     return (
       <div class="App">
 
@@ -19,18 +17,57 @@ function App() {
         
       </div>
         
-      <button class="button-other" id="button-duplicate">Duplicate</button>
+      <button class="button-other" id="button-duplicate" onClick={duplicateCard}>Duplicate</button>
         
-      <button class="button-other" id="button-delete">Delete</button>
+      <button class="button-other" id="button-delete" onClick={deleteCard}>Delete</button>
         
-      <button class="button-other" id="button-color" onClick="toggleBackground()">Toggle Background Color</button>
+      <button class="button-other" id="button-color" onClick={toggleBackground}>Toggle Background Color</button>
 
-      <button class="button-other" id="button-heading" onClick="changeHeading()">Change Heading</button>
+      <button class="button-other" id="button-heading" onClick={changeHeading}>Change Heading</button>
         
-      <button class="button-other" id="button-description" onClick="toggleDescription()">Toggle Description</button>
+      <button class="button-other" id="button-description" onClick={toggleDescription}>Toggle Description</button>
         
       </div>  
     );
+  }
+
+  function duplicateCard() {
+    let card = document.querySelector(".card");
+    let clonedCard = card.cloneNode(true);
+    clonedCard.id = 'clonedcard';
+    document.body.appendChild(clonedCard);
+  }
+
+  function deleteCard() {
+    let card = document.querySelector(".card");
+    let clonedCard = card.cloneNode(true);
+    clonedCard.id = 'clonedcard';
+    document.body.querySelector("#clonedcard").remove();
+  }
+
+  function toggleBackground() {
+    let c = document.querySelector("#card");
+    c.className = 'toggled' == c.className ? '' : 'toggled';
+  }
+  
+  function changeHeading() {
+    let h = document.querySelector("h1");
+    if (h.innerHTML == "MTD") {
+      h.innerHTML = "super";
+    }
+    else {
+      h.innerHTML = "MTD";
+    }
+  }
+  
+  function toggleDescription() {
+    const details = document.querySelector('summary');
+    if (details.parentNode.getAttribute('open')) {
+      details.parentNode.removeAttribute('open');
+    }
+    else {
+      details.parentNode.setAttribute('open','open');   
+    }
   }
 
 export default App;
